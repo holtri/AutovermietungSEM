@@ -77,6 +77,8 @@ public class CarRentalModelTest {
 		assertTrue(testTransitionMatrix.calcNumberOfWorkers(currentAtBusStop, currentAtWaitingRoom, targetAtWaitingRoom, transfer)==2);
 	}
 	
+	
+	
 	@Test
 	public void testCalcNumerOfArrivals(){
 		
@@ -264,4 +266,18 @@ public class CarRentalModelTest {
 		
 		assertTrue(testTransitionMatrix.getWorkersForTransitionElement(currentAtBusStop, currentAtWaitingRoom, targetAtBusStop, targetAtWaitingRoom)==-1); //number of needed workers is negative (-1)
 	}
+	
+	@Test
+	public void testSetWorkersForTransition4(){
+		
+		int currentAtBusStop = 2;
+		int currentAtWaitingRoom = 1;
+		int targetAtWaitingRoom = 0;
+		int targetAtBusStop = 2;
+				
+		int transfer = testTransitionMatrix.calculateTransferValue(currentAtBusStop, currentAtWaitingRoom);
+		
+		assertTrue(testTransitionMatrix.getWorkersForTransitionElement(currentAtBusStop, currentAtWaitingRoom, targetAtBusStop, targetAtWaitingRoom)==1); 
+	}
+	
 }
